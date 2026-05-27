@@ -12,4 +12,9 @@ while (j<=5){
 }
 
 // 3. Crie um do...while que peça uma senha até que seja '1234'.
-
+var senha = 1230
+do{
+    senha++;
+    console.log(senha);
+    
+} while (senha<1234)
