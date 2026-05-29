@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8" />
+    <title>Gerando Tabuadas</title>
+</head>
+<body>
+    <script>
+        function gerarTabela(){
+            const inicio = parseInt(document.getElementById("inicio").value);
+            const fim = parseInt(document.getElementById("fim").value);
+            const resultado = document.getElementById("resultado");
+            resultado.innerHTML = "";
+
+            if(isNaN(inicio) || isNaN(fim)){
+                alert("Digite um valor válido");
+                return;
+            }
+            if(inicio>fim){
+                alert("O valor inicial deve ser menor que o final");
+                return;
+            }
+
+            for(let i = inicio; i<=fim; i++){
+                let bloco = `<h3>Tabuada do ${i}</h3>`;
+
+                for(let j = 1; j<=10; j++){
+                    bloco += `${i} x ${j} = ${i * j} <br>`;
+                }
+
+                bloco += "<hr>";
+                resultado.innerHTML += bloco;
+            }
+        }
+    </script>
+
+    <h1>Digite o valor de início</h1>
+    <input type="text" id="inicio"></input><br>
+
+    <h1>Digite o valor final</h1>
+    <input type="text" id="fim"></input>
+
+    <input type="submit" onclick="gerarTabela()"></input><br>
+
+    <div id="resultado"></div>
+</body>
+</html>
