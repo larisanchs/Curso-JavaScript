@@ -1,0 +1,58 @@
+<!--
+// 1. Faça um botão que, ao ser clicado, mude o texto de um parágrafo. 
+// 2. Capture o texto digitado em um input e mostre em tempo real abaixo dele. 
+// 3. Ao passar o mouse sobre uma imagem, troque sua borda. 
+-->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8" />
+    <title>Eventos no navegador e Interatividade</title>
+
+    <style>
+        .imagem{
+            width: 50%;
+            height: 50%;
+        }
+        .novo-estilo{
+            border-radius: 15px;
+            border: solid 3px;
+            border-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <h1>Eventos no navegador e Interatividade</h1>
+    <p>O que são Eventos?</p>
+    <p id="resposta">...</p>
+    <input type="submit" value="Exibir resposta" onclick="exibirParagrafo()">
+    <br><br>
+
+    <input type="text" id="texto-do-input" placeholder="Digite algo">
+    <br>
+
+    <p id="texto-digitado">...</p>
+
+    <img src="cr7.jpg" class="imagem">
+
+
+    <script>
+
+        // Função que muda o texto do parágrafo (exibindo a resposta)
+        function exibirParagrafo(){
+            let paragrafo = document.getElementById("resposta").textContent = "Eventos são ações que ocorrem na página, como cliques, digitação ou carregamento. JavaScript pode reagir a esses eventos.";
+        }
+
+        document.getElementById("texto-do-input").addEventListener("input", function(e){
+            document.getElementById("texto-digitado").textContent = e.target.value;
+        })
+
+        document.querySelector("img").addEventListener("mouseover", function(e){
+            document.querySelector("img").classList.add("novo-estilo")
+        })
+        
+        
+    </script>
+</body>
+</html>
