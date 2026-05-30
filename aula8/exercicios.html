@@ -1,0 +1,50 @@
+<!--
+1. Altere o texto de um elemento h1 via JavaScript. 
+2. Mude a cor de fundo de um parágrafo ao carregar a página. 
+3. Adicione uma classe CSS a um botão existente. 
+-->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8" />
+    <title>Manipulação do DOM</title>
+
+    <style>
+        .botao-azul{
+            background-color: rgb(147, 215, 225);
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="titulo">Olá, mundo!</h1>
+    <input type="submit" value="Alterar Título" onclick="mudarTitulo()">
+    <br><br>
+    
+    <p>O DOM representa a estrutura de uma página HTML como uma árvore de objetos manipuláveis com JavaScript.</p>
+    <br>
+
+    <input type="submit" value="Adicionar classe à esse botão" id="botao" onclick="adicionarClasse()">
+    
+    <script>
+
+        // Alterando o texto do h1
+        function mudarTitulo(){
+            document.getElementById("titulo").textContent = "Bem vindo(a)!";
+        }
+
+        // Alterando a cor de fundo do parágrafo
+        let paragrafo = document.querySelector("p");
+        paragrafo.style.backgroundColor = "yellow";
+        
+        // Adicionando uma classe CSS no botão
+        function adicionarClasse(){
+            let botao = document.getElementById("botao");
+            botao.classList.add("botao-azul");
+        }
+        
+
+    </script>
+</body>
+</html>
