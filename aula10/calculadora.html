@@ -1,0 +1,38 @@
+<!-- 
+1. Implemente os botões de subtração, multiplicação e divisão. 
+2. Adicione validação para garantir que os campos não estejam vazios. 
+3. Estilize a interface com CSS básico.
+-->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8" />
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="calculadora.png">
+</head>
+<body>
+    <h1>Calculadora com JavaScript</h1>
+    
+    <div class="container">
+        <div class="box">
+            <label>Valor 1:</label>
+            <input id="n1" placeholder="Digite um número">
+            <br>
+            <label>Valor 2:</label>
+            <input id="n2" placeholder="Digite um número">
+            <br>
+
+            <h3>Selecione a operação que você deseja realizar:</h3>
+            <button id="soma" onclick="somar()">Somar</button>
+            <button id="subtracao" onclick="subtrair()">Subtrair</button>
+            <button id="multiplicacao" onclick="multiplicar()">Multiplicar</button>
+            <button id="divisao" onclick="dividir()">Dividir</button>
+            
+            <p id="resultado">O resultado da operação irá aparecer aqui.</p>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
