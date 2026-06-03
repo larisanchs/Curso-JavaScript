@@ -1,0 +1,21 @@
+1. Explique a diferença entre escopo de função e de bloco.
+
+Resposta: O escopo de função se limita apenas para o que será executado dentro de determinada função. Já o escopo de bloco se limita apenas para o que será executado dentro de um bloco, como o "while" e o "for".
+
+2. Analise o código a seguir e diga o que será impresso:
+var x = 1;
+function teste() {
+ console.log(x);
+ var x = 2;
+ console.log(x);
+}
+teste();
+
+Resposta: Primeiramente, será exibido a mensagem "undefined" (por conta do içamento da variável declarada dentro da própria função), e depois será exibido o número 2 (que foi declarado dentro do escopo da função).
+
+4. Desafio: explique por que o código abaixo imprime 3, 3, 3 e como corrigir:
+for (var i = 0; i < 3; i++) {
+ setTimeout(() => console.log(i), 100);
+} 
+
+Resposta: O código imprime 3, 3, 3 porque o setTimeout executa depois que o laço termina. Como i foi declarado com var, todas as funções usam a mesma variável, que ao final vale 3.
