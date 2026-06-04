@@ -1,0 +1,18 @@
+3. Explique com suas palavras o que é um closure e por que ele é útil.
+
+Resposta: Closure é um recurso do JavaScript que permite que uma função acesse variáveis do escopo onde foi criada, mesmo após esse escopo ter sido encerrado. Ele é útil porque ajuda a manter informações privadas, preservar estados entre execuções e criar códigos mais organizados e seguros.
+
+4. Qual será o resultado do código abaixo?
+function criarContador() {
+    let i = 0;
+    return function() {
+        return ++i;
+    }
+}
+let c1 = criarContador();
+let c2 = criarContador();
+console.log(c1()); // 1
+console.log(c1()); // 2
+console.log(c2()); // 1
+
+Resposta: O código exibirá os valores 1, 2 e 1, pois cada contador mantém seu próprio estado através de um closure.
