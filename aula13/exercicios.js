@@ -40,10 +40,43 @@ function calcular(numero1, numero2, operacao) {
     return operacao(numero1, numero2);
 }
 
-function soma(){
-    return a + numebro2;
+function soma(a, b){
+    return a + b;
 }
+
+function subtracao(a, b){
+    return a - b;
+}
+
+function multiplicacao(a, b){
+    return a * b;
+}
+
+function divisao(a, b){
+    return a / b;
+}
+
+console.log(calcular(10, 5, soma));
+console.log(calcular(10, 5, subtracao));
+console.log(calcular(10, 5, multiplicacao));
+console.log(calcular(10, 5, divisao));
 
 // 4. (Desafio) Implemente uma função `compose(f, g)` que retorna uma nova função onde `f(g(x))` é executado
 
+function compose(f,g){
+    return function (x){
+        return f(g(x));
+    }
+}
 
+function dobrar(x) {
+    return x * 2;
+}
+
+function somar2(x) {
+    return x + 2;
+}
+
+const resultado = compose(dobrar, somar2);
+
+console.log(resultado(4));
